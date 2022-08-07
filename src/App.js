@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Balance from "./components/Balance";
+import IncomeExpenses from "./components/IncomeExpenses";
+import Transactions from "./components/Transactions";
+import Addtransaction from "./components/Addtransaction";
+import { useState, useEffect, createContext } from "react";
+import { ContextExtend } from "./components/context/Context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextExtend>
+      <div className="App">
+        <Header />
+        <div className="container">
+          <Balance />
+          <IncomeExpenses />
+          <Transactions />
+          <Addtransaction />
+        </div>
+      </div>
+    </ContextExtend>
   );
 }
 
